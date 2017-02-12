@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Wed Feb  8 15:04:23 2017 Antoine Briaux
-** Last update Thu Feb  9 18:39:54 2017 Antoine Briaux
+** Last update Sun Feb 12 14:31:33 2017 Antoine Briaux
 */
 
 #include <unistd.h>
@@ -50,6 +50,6 @@ int 		main()
 	// 	free(dest);
 	// }
 
-	printf("%d, %li, %lli, %f\n", my_atoi("123456"), my_atol("123456789"), my_atoll("234567895432"), my_atof("123.456"));
+	printf("%d, %li, %lli, %f\n", my_atoi("-123456"), my_atol("-123456789"), my_atoll("-234567895432"), my_atof("123.456"));
 	return (0);
 }

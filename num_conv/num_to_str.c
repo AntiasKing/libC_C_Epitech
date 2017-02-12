@@ -5,21 +5,27 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Thu Feb  9 18:25:23 2017 Antoine Briaux
-** Last update Thu Feb  9 18:44:27 2017 Antoine Briaux
+** Last update Sun Feb 12 14:49:47 2017 Antoine Briaux
 */
 
-int 	my_atoi(const char *str)
+int 		my_atoi(const char *str)
 {
-	int	nbr;
-	int	i;
+	int		nbr;
+	int		i;
+	char	neg;
 
 	nbr = 0;
+	neg = 0;
 	i = -1;
-	while (str[++i])
+	if (*str == '-')
 	{
-		nbr *= 10;
-		nbr += str[i] - '0';
+		neg = 1;
+		i = 0;
 	}
+	while (str[++i])
+		nbr = nbr * 10 + str[i] - '0';
+	if (neg)
+		nbr *= -1;
 	return (nbr);
 }
 
@@ -27,14 +33,20 @@ long 		my_atol(const char *str)
 {
 	long	nbr;
 	int		i;
+	char	neg;
 
 	nbr = 0;
+	neg = 0;
 	i = -1;
-	while (str[++i])
+	if (*str == '-')
 	{
-		nbr *= 10;
-		nbr += str[i] - '0';
+		neg = 1;
+		i = 0;
 	}
+	while (str[++i])
+		nbr = nbr * 10 + str[i] - '0';
+	if (neg)
+		nbr *= -1;
 	return (nbr);
 }
 
@@ -42,36 +54,48 @@ long long		my_atoll(const char *str)
 {
 	long long	nbr;
 	int			i;
+	char		neg;
 
 	nbr = 0;
+	neg = 0;
 	i = -1;
-	while (str[++i])
+	if (*str == '-')
 	{
-		nbr *= 10;
-		nbr += str[i] - '0';
+		neg = 1;
+		i = 0;
 	}
+	while (str[++i])
+		nbr = nbr * 10 + str[i] - '0';
+	if (neg)
+		nbr *= -1;
 	return (nbr);
 }
 
 float 		my_atof(const char *str)
 {
-	float 	nbr;
-	int		mod;
-	int		i;
+	float	nbr;
+	float	fact;
+	int		point;
 
-	i = -1;
 	nbr = 0;
-	mod = 1;
-	while (str[++i])
+	fact = 1;
+	point = 0;
+	if (*str == '-')
 	{
-		printf("%d\n", i);
-		if (str[i] == '.')
-			mod = 10;
-		else
-		{
-			nbr *= 10;
-			nbr += (str[i] - '0') / mod;
-		}
+		str++;
+		fact = -1;
 	}
-	return (nbr);
+	while (*str)
+	{
+		if (*str == '.')
+			point = 1;
+		if (*str - '0' >= 0 && *str - '0' <= 9)
+		{
+			if (point)
+				fact /= 10.;
+			nbr = nbr * 10. + (float) *str - '0';
+		}
+		str++;
+	}
+	return (nbr * fact);
 }
