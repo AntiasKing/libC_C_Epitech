@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Thu Feb  9 12:37:09 2017 Antoine Briaux
-** Last update Thu Feb  9 17:43:48 2017 Antoine Briaux
+** Last update Mon Feb 13 13:43:39 2017 Antoine Briaux
 */
 
 #include <stdlib.h>
@@ -28,8 +28,11 @@ int			my_strspn(const char *str1, const char *str2)
 	int 	nbr_com;
 
 	nbr_com = 0;
-	while (*(str1++) == *(str2++))
+	while (*str1 && check_char(*str1, str2))
+	{
 		nbr_com += 1;
+		str1++;
+	}
 	return (nbr_com);
 }
 
@@ -38,8 +41,11 @@ int 		my_strcspn(const char *str1, const char *str2)
 	int 	nbr_dif;
 
 	nbr_dif = 0;
-	while (*(str1++) != *(str2++))
+	while (*str1 && !check_char(*str1, str2))
+	{
 		nbr_dif += 1;
+		str1++;
+	}
 	return (nbr_dif);
 }
 

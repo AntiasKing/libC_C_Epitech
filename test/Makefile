@@ -5,7 +5,7 @@
 ## Login   <antoine.briaux@epitech.eu>
 ##
 ## Started on  Wed Feb  8 15:07:11 2017 Antoine Briaux
-## Last update Thu Feb  9 18:32:15 2017 Antoine Briaux
+## Last update Sun Feb 12 16:16:14 2017 Antoine Briaux
 ##
 
 CC = gcc
@@ -19,6 +19,7 @@ SRCS = 	../parser/parsing.c	\
 		../parser/string_info2.c \
 		../parser/string_info3.c \
 		../parser/my_strtok.c \
+		../parser/str_to_wordtab.c \
 		../num_conv/num_to_str.c \
 		test_parsing.c
 

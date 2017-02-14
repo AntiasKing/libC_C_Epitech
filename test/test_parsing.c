@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Wed Feb  8 15:04:23 2017 Antoine Briaux
-** Last update Sun Feb 12 14:31:33 2017 Antoine Briaux
+** Last update Tue Feb 14 16:07:45 2017 Antoine Briaux
 */
 
 #include <unistd.h>
@@ -17,7 +17,7 @@
 
 int 		main()
 {
-	// char	*dest;
+	char	*dest;
 	// char	*src = "la libC.";
 	//
 	// dest = malloc(100);
@@ -39,17 +39,25 @@ int 		main()
 	// printf("strspn: %d\nmy_strspn: %d\n", strspn("ABCD", "ABcD"), my_strspn("ABCD", "ABcD"));
 	// printf("strcspn: %d\nmy_strcspn: %d\n", strcspn("aBCD", "ABcD"), my_strcspn("aBCD", "ABcD"));
 	// printf("strstr: %s\nmy_strstr: %s\n", strstr("ABCDE", "c"), my_strstr("ABCDE", "c"));
+	// printf("strpbrk: %s\nmy_strpbrk: %s\n", strpbrk("LOLdeolde", "olde"), my_strpbrk("LOLdeolde", "olde"));
 
 	// printf("strdup: Lololo %s\nmy_strdup: Lololo %s\n", strdup("Lololo\0"), my_strdup("Lololo"));
-	// char src[] = "LASHIDZHAIHDdiehdzediiedh,dezhdihzeid dheuihd dehiu	deuih	dheiuhd	hui	uih	ih	hiuhui	uih	uh	idehdziuhduizehzeuihzehiuiehi";
-	// dest = my_strtok(src, " ,	");
-	// printf("%s\n", dest);
-	// while ((dest = my_strtok(NULL, " ,	")) != NULL)
-	// {
-	// 	printf("%s\n", dest);
-	// 	free(dest);
-	// }
+	char src[] = "LASHIDZHAIHDdiehdzediiedh,dezhdihzeid dheuihd dehiu	deuih	dheiuhd	hui	uih	ih	hiuhui	uih	uh	idehdziuhduizehzeuihzehiuiehi";
+	dest = my_strtok(src, " ,	");
+	printf("%s\n", dest);
+	while ((dest = my_strtok(NULL, " ,	")) != NULL)
+	{
+		printf("%s\n", dest);
+		free(dest);
+	}
 
-	printf("%d, %li, %lli, %f\n", my_atoi("-123456"), my_atol("-123456789"), my_atoll("-234567895432"), my_atof("123.456"));
+	// printf("%d, %li, %lli, %f\n", my_atoi("-123456"), my_atol("-123456789"), my_atoll("-234567895432"), my_atof("123.456"));
+	char 	**wordtab;
+	char	str[] = "BAUYEHIUSI  szshzihs,dedhiesoja	    	sziuh	oisjzo ";
+	int		i = -1;
+
+	wordtab = str_to_wordtab(str, ",	 ");
+	while (wordtab[++i] != NULL)
+		printf("%s\n", wordtab[i]);
 	return (0);
 }
