@@ -5,11 +5,12 @@
 ## Login   <antoine.briaux@epitech.eu>
 ##
 ## Started on  Fri Feb 17 13:34:20 2017 Antoine Briaux
-## Last update Fri Feb 17 13:53:19 2017 Antoine Briaux
+## Last update Fri Feb 17 14:31:34 2017 Antoine Briaux
 ##
 
 CC = gcc
 RM = rm -f
+RM_DIR = rm -rf
 MD = mkdir
 CP = cp -R
 MV = mv
@@ -38,7 +39,7 @@ DIR = lib
 
 lib: $(OBJS)
 	ar rc $(NAME) $(OBJS)
-	$(MK) $(DIR)
+	$(MD) $(DIR)
 	$(CP) $(DIR_SRC) $(DIR)
 	$(CP) $(DIR_INC) $(DIR)
 	$(MV) $(NAME) $(DIR)
@@ -47,6 +48,6 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM_DIR) $(DIR)
 
 re: fclean lib

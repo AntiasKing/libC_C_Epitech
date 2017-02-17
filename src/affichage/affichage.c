@@ -5,9 +5,10 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Fri Feb 17 13:26:45 2017 Antoine Briaux
-** Last update Fri Feb 17 13:31:26 2017 Antoine Briaux
+** Last update Fri Feb 17 14:06:13 2017 Antoine Briaux
 */
 
+#include <unistd.h>
 #include "parser.h"
 
 void    my_putchar(char c)
@@ -22,7 +23,7 @@ void    my_putstr(char *str)
 
 void    my_puterror(char *err)
 {
-    write(2, err, my_strlen(str));
+    write(2, err, my_strlen(err));
 }
 
 void                my_putnbr(int nbr)

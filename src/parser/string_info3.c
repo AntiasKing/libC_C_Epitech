@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Thu Feb  9 17:24:20 2017 Antoine Briaux
-** Last update Tue Feb 14 16:03:24 2017 Antoine Briaux
+** Last update Fri Feb 17 13:59:41 2017 Antoine Briaux
 */
 
 #include <stdio.h>
@@ -36,7 +36,7 @@ char				*my_strpbrk(const char *str, const char *accept)
 		while (accept[i] && accept[i] != *str)
 			i++;
 		if (*str == accept[i])
-			return (str);
+			return ((char *) str);
 		str++;
 	}
 	return (NULL);
