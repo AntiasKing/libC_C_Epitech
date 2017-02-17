@@ -5,7 +5,7 @@
 ## Login   <antoine.briaux@epitech.eu>
 ##
 ## Started on  Fri Feb 17 13:34:20 2017 Antoine Briaux
-## Last update Fri Feb 17 13:48:02 2017 Antoine Briaux
+## Last update Fri Feb 17 13:53:19 2017 Antoine Briaux
 ##
 
 CC = gcc
@@ -26,9 +26,9 @@ SRCS = 	src/affichage/affichage.c	\
 		src/parser/string_info2.c	\
 		src/parser/string_info3.c
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
-NAME = libmy
+NAME = libmy.a
 
 DIR_SRC = src
 
@@ -37,7 +37,7 @@ DIR_INC = inc
 DIR = lib
 
 lib: $(OBJS)
-	ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJS)
 	$(MK) $(DIR)
 	$(CP) $(DIR_SRC) $(DIR)
 	$(CP) $(DIR_INC) $(DIR)
