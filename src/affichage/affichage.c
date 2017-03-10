@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Fri Feb 17 13:26:45 2017 Antoine Briaux
-** Last update Fri Feb 17 14:06:13 2017 Antoine Briaux
+** Last update Wed Feb 22 17:52:43 2017 Antoine Briaux
 */
 
 #include <unistd.h>
@@ -36,7 +36,7 @@ void                my_putnbr(int nbr)
     }
     else
         u_nbr = nbr;
-    if (u_nbr > 10)
+    if (u_nbr > 9)
         my_putnbr(u_nbr / 10);
     my_putchar(u_nbr % 10 + '0');
 }

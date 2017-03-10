@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Wed Feb  8 15:04:23 2017 Antoine Briaux
-** Last update Tue Feb 14 16:07:45 2017 Antoine Briaux
+** Last update Wed Feb 22 17:53:27 2017 Antoine Briaux
 */
 
 #include <unistd.h>
@@ -42,22 +42,23 @@ int 		main()
 	// printf("strpbrk: %s\nmy_strpbrk: %s\n", strpbrk("LOLdeolde", "olde"), my_strpbrk("LOLdeolde", "olde"));
 
 	// printf("strdup: Lololo %s\nmy_strdup: Lololo %s\n", strdup("Lololo\0"), my_strdup("Lololo"));
-	char src[] = "LASHIDZHAIHDdiehdzediiedh,dezhdihzeid dheuihd dehiu	deuih	dheiuhd	hui	uih	ih	hiuhui	uih	uh	idehdziuhduizehzeuihzehiuiehi";
-	dest = my_strtok(src, " ,	");
-	printf("%s\n", dest);
-	while ((dest = my_strtok(NULL, " ,	")) != NULL)
-	{
-		printf("%s\n", dest);
-		free(dest);
-	}
-
-	// printf("%d, %li, %lli, %f\n", my_atoi("-123456"), my_atol("-123456789"), my_atoll("-234567895432"), my_atof("123.456"));
-	char 	**wordtab;
-	char	str[] = "BAUYEHIUSI  szshzihs,dedhiesoja	    	sziuh	oisjzo ";
-	int		i = -1;
-
-	wordtab = str_to_wordtab(str, ",	 ");
-	while (wordtab[++i] != NULL)
-		printf("%s\n", wordtab[i]);
+	// char src[] = "LASHIDZHAIHDdiehdzediiedh,dezhdihzeid dheuihd dehiu	deuih	dheiuhd	hui	uih	ih	hiuhui	uih	uh	idehdziuhduizehzeuihzehiuiehi";
+	// dest = my_strtok(src, " ,	");
+	// printf("%s\n", dest);
+	// while ((dest = my_strtok(NULL, " ,	")) != NULL)
+	// {
+	// 	printf("%s\n", dest);
+	// 	free(dest);
+	// }
+	//
+	// // printf("%d, %li, %lli, %f\n", my_atoi("-123456"), my_atol("-123456789"), my_atoll("-234567895432"), my_atof("123.456"));
+	// char 	**wordtab;
+	// char	str[] = "BAUYEHIUSI  szshzihs,dedhiesoja	    	sziuh	oisjzo ";
+	// int		i = -1;
+	//
+	// wordtab = str_to_wordtab(str, ",	 ");
+	// while (wordtab[++i] != NULL)
+	// 	printf("%s\n", wordtab[i]);
+	my_putnbr(12345);
 	return (0);
 }

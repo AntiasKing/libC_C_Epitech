@@ -25,6 +25,7 @@ SRCS = 	src/affichage/affichage.c	\
 		src/parser/str_to_wordtab.c	\
 		src/parser/string_info.c	\
 		src/parser/string_info2.c	\
+		src/parser/get_next_line.c	\
 		src/parser/string_info3.c
 
 OBJS = $(SRCS:.c=.o)
