@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Wed Feb  8 18:30:17 2017 Antoine Briaux
-** Last update Thu Feb  9 12:47:42 2017 Antoine Briaux
+** Last update Tue Mar 21 17:10:58 2017 Antoine Briaux
 */
 
 #include <stdlib.h>
@@ -15,7 +15,8 @@ int 	my_strlen(char *str)
 	int i;
 
 	i = -1;
-	while (str[++i] != '\0');
+	if (str)
+		while (str[++i] != '\0');
 	return (i);
 }
 

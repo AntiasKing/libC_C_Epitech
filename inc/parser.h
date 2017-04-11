@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Wed Feb  8 15:12:55 2017 Antoine Briaux
-** Last update Tue Feb 14 16:03:48 2017 Antoine Briaux
+** Last update Fri Apr  7 17:32:13 2017 Antoine Briaux
 */
 
 #ifndef __PARSER__
@@ -17,6 +17,8 @@ char			*my_strdup_cat(const char *str1, const char *str2);
 char			*my_strcpy(char *dest, const char *src);
 char			*my_strncpy(char *dest, const char *src, int n);
 unsigned int 	my_strxfrm(char *dest, const char *src, int n);
+
+char 			*get_next_line(int fd);
 
 int		my_strlen(const char *str);
 int 	my_strcmp(const char *str1, const char *str2);
@@ -32,6 +34,9 @@ char 	*my_strdup(const char *str);
 char 	*my_strndup(const char *str, const unsigned int n);
 char 	*my_strtok(char *str, char *delim);
 char    **str_to_wordtab(char *str, char *delim);
-
+void 	destroy_wordtab(char **wordtab);
+int 	wordtab_length(char **wordtab);
+char 	*my_strstr(const char *str1, const  char *str2);
+int 	my_strstr_int(char *str1, char *str2);
 
 #endif /* !__PARSER__ */

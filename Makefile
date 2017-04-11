@@ -5,7 +5,7 @@
 ## Login   <antoine.briaux@epitech.eu>
 ##
 ## Started on  Fri Feb 17 13:34:20 2017 Antoine Briaux
-## Last update Fri Feb 17 14:31:34 2017 Antoine Briaux
+## Last update Thu Apr  6 14:31:03 2017 Antoine Briaux
 ##
 
 CC = gcc
@@ -15,7 +15,7 @@ MD = mkdir
 CP = cp -R
 MV = mv
 
-CFLAGS = -W -Wextra -Wall -Iinc
+CFLAGS = -W -Wextra -Wall -Iinc -g3
 
 SRCS = 	src/affichage/affichage.c	\
 		src/num_conv/num_to_str.c	\
@@ -26,6 +26,9 @@ SRCS = 	src/affichage/affichage.c	\
 		src/parser/string_info.c	\
 		src/parser/string_info2.c	\
 		src/parser/get_next_line.c	\
+		src/mem_gest.c 				\
+		src/vector/vector.c			\
+		src/vector/split_vector.c	\
 		src/parser/string_info3.c
 
 OBJS = $(SRCS:.c=.o)
@@ -40,15 +43,11 @@ DIR = lib
 
 lib: $(OBJS)
 	ar rc $(NAME) $(OBJS)
-	$(MD) $(DIR)
-	$(CP) $(DIR_SRC) $(DIR)
-	$(CP) $(DIR_INC) $(DIR)
-	$(MV) $(NAME) $(DIR)
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM_DIR) $(DIR)
+	$(RM) $(NAME)
 
 re: fclean lib
