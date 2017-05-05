@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Thu Jan  5 10:38:05 2017 Antoine Briaux
-** Last update Tue Mar 21 18:40:36 2017 Antoine Briaux
+** Last update Thu Mar 16 16:36:03 2017 Antoine Briaux
 */
 
 #include <unistd.h>
@@ -55,7 +55,8 @@ static char     *my_strcat(char *line, char *buffer,
 
     i = 0;
     if (!(cat = xmalloc(size_line + size_read + 1))) return (NULL);
-    if (line != NULL) {
+    if (line != NULL)
+    {
         while (i < size_line + size_read)
         {
             if (i < size_line)
@@ -72,6 +73,7 @@ static char     *my_strcat(char *line, char *buffer,
         }
     }
     cat[i] = '\0';
+    // free(line);
     return (cat);
 }
 
@@ -113,13 +115,17 @@ char            *get_next_line(const int fd)
     int         pos_end_line;
 
     is_end_line = 0;
-    while (1) {
+    while (1)
+    {
         pos_end_line = check_end_line(line, size_line, &is_end_line);
         if (is_end_line)
             break;
         size_read = read(fd, buffer, READ_SIZE);
         if (size_read <= 0)
+        {
+            free(line);
             return (NULL);
+        }
         line = my_strcat(line, buffer, size_line, size_read);
         size_line += size_read;
     }

@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Thu Feb  9 17:24:20 2017 Antoine Briaux
-** Last update Thu Apr  6 15:54:38 2017 Antoine Briaux
+** Last update Sun Mar 19 16:02:26 2017 Antoine Briaux
 */
 
 #include <stdio.h>
@@ -47,17 +47,10 @@ char				*my_strdup_cat(const char *str1, const char *str2)
 	char			*dup;
 	int 			i, j;
 
-	if (str1 && str2)
-		dup = malloc(my_strlen(str1) + my_strlen(str2) + 1);
-	else if (str1)
-		dup = malloc(my_strlen(str1) + 1);
-	else if (str2)
-		dup = malloc(my_strlen(str2) + 1);
-	else
-		return (NULL);
-	i = 0;
+	dup = malloc(my_strlen(str1) + my_strlen(str2) + 1);
 	if (str1 != NULL)
 	{
+		i = 0;
 		while (str1[i])
 		{
 			dup[i] = str1[i];
@@ -87,25 +80,4 @@ int					check_char(char c, char *str)
 		str++;
 	}
 	return (0);
-}
-
-int 				my_strstr_int(char *str1, char *str2)
-{
-	int 	i;
-	int 	pos;
-
-	pos = 0;
-	while (*(str1++))
-	{
-		if (*str1 == *str2)
-		{
-			i = 0;
-			while (str1[i] && str2[i] && str1[i] == str2[i])
-				i += 1;
-			if (i == my_strlen(str2))
-				return (pos + 1);
-		}
-		pos++;
-	}
-	return (-1);
 }

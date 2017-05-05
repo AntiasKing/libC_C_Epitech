@@ -5,7 +5,7 @@
 ## Login   <antoine.briaux@epitech.eu>
 ##
 ## Started on  Fri Feb 17 13:34:20 2017 Antoine Briaux
-## Last update Thu Apr  6 14:31:03 2017 Antoine Briaux
+## Last update Fri May  5 16:51:43 2017 Antoine Briaux
 ##
 
 CC = gcc
@@ -26,10 +26,7 @@ SRCS = 	src/affichage/affichage.c	\
 		src/parser/string_info.c	\
 		src/parser/string_info2.c	\
 		src/parser/get_next_line.c	\
-		src/mem_gest.c 				\
-		src/vector/vector.c			\
-		src/vector/split_vector.c	\
-		src/parser/string_info3.c
+		src/parser/string_info3.c	
 
 OBJS = $(SRCS:.c=.o)
 

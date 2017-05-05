@@ -5,7 +5,7 @@
 ** Login   <antoine.briaux@epitech.eu>
 **
 ** Started on  Sun Feb 12 16:01:51 2017 Antoine Briaux
-** Last update Fri Apr  7 17:31:58 2017 Antoine Briaux
+** Last update Mon Feb 13 16:05:52 2017 Antoine Briaux
 */
 
 #include "string.h"
@@ -47,31 +47,4 @@ char        **str_to_wordtab(char *str, char *delim)
     }
     else
         return (NULL);
-}
-
-int 	wordtab_length(char **wordtab)
-{
-	int	nbr_line;
-
-	if (wordtab)
-	{
-		nbr_line = 0;
-		while (wordtab[nbr_line])
-			nbr_line++;
-		return (nbr_line);
-	}
-	return (-1);
-}
-
-void 	destroy_wordtab(char **wordtab)
-{
-	if (wordtab)
-	{
-		while (*wordtab)
-		{
-			free(*wordtab);
-			wordtab++;
-		}
-		free(wordtab);
-	}
 }
